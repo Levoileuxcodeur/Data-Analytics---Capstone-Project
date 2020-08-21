@@ -1,12 +1,12 @@
 # Introduction
 
-This project idea is based on my dream to one day move from where I live to another city and be able to find a neighborhood that match my lifestyle.
+This project idea is based on my dream of one day move from where I live to another city and be able to find a neighborhood that match my lifestyle.
 
 When moving to a new city, it is difficult to identify which neighborhoods suit our needs without already having spent some time in the city.
 
-Therefore, I created a tool that will allow me to identify what I like in their current neighborhood and find similar neighborhoods in an pther city of my choice.
+Therefore, I created a tool that will allow me to identify what neighborhoods I like in my current and find similar neighborhoods in an other city of my choice.
 
-Grouping factors amgonst will be amount of venues of different categories: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot. (Those categories are Foursquare top-level categories)
+Grouping factors amgonst the neighborhoods will be amount of venues of different categories: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot. (Those categories are Foursquare top-level categories)
 
 
 # Data
@@ -51,11 +51,11 @@ To do so, I started by unputing which Montreal neighbordhoods I would live in, o
 
 As a second step, I prepared the neighborhood matrix. This consists of gathering the number of venues by category for each of the nine neighborhoods previously chosen.
 
-The weighted category matrix is obtained by multiplying the user input matrix (Hadamard product) to the neighborhood matrix. This matrix shows the interest of the user about the different type of venue categories.
+The weighted category matrix was obtained by multiplying the user input matrix (Hadamard product) to the neighborhood matrix. This matrix shows the interest of the user about the different type of venue categories.
 
-The user profile matrix is obtained by simply summing the columns content then normalizing numbers.
+The user profile matrix was obtained by simply summing the columns content then normalizing numbers.
 
-Next step consists of finding the recommendations, which are the best Vancouver neighborhoods based on the my preferences. To do that, I obtained a matrix of Vancouver neighborhoods with the sum of venues by categories. I then multilplied this matrix to the user profile matrix (Hadamard product) and summed each row. The row with the highest value represents the neighborhood that theoritically best suits the user's preferences.
+Next step consisted of finding the recommendations, which are the best Vancouver neighborhoods based on the my preferences. To do that, I obtained a matrix of Vancouver neighborhoods with the sum of venues by categories. I then multilplied this matrix to the user profile matrix (Hadamard product) and summed each row. The row with the highest value represents the neighborhood that theoritically best suits the user's preferences.
 
 
 # Results
@@ -65,23 +65,23 @@ Given that my favourite Montreal neighborhoods are Le Plateau and Petite-Italie:
 the K-Means clustering analysis provided the following recommendations: Chinatown, Downtown Eastside, Gastown, International Village, Victory Square, West End, Marpole and Mount Pleasant.
 
 
-Given my input on neighborhoods where I would live or:
+Given my input on neighborhoods where I would live or not:
 
 the Content-based recommender provided the following top ten recommendations: South Granville, Chinatown, Granville Mall, Robson, South Main, Gastown, Yaletown, Victory Square, International Village and Commercial Drive.
 
 
-As a summary of recommendations, I decided to recommend only the neighborhoods that were part of both analysis: Chinatown, International Village and Gastown. 
+As a summary of recommendations, I decided to consider only the neighborhoods that were part of both analysis: Chinatown, International Village and Gastown. 
 
 
 # Discussion
 
 Obviously, the two studies above have limitations. 
 
-Based on the methodology, I used a radius of 500 meters to find venues for a given neighborhood. Given that I was looking at central neighborhoods for each city, these ones are closely located which means that some venues are in more than one neighborhoods. The impact of this was that close neighborhoods ended up having really similar venue category distribution. An alternate means to find venues would have been to use the actual perimeters of each neighborhoods.
+Based on the methodology, I used a radius of 500 meters to find venues for a given neighborhood. Given that I was looking at central neighborhoods for each city, these ones are closely located one to another which means that some venues are in more than one neighborhoods. The impact of this was that close neighborhoods ended up having really similar venue category distribution. An alternate means to find venues would have been to use the actual perimeters of each neighborhoods.
 
-Regarding the content-based recommender, I found that the venue category distributions amongst the neighborhoods did not allow the my inputs to change a lot and have a big impact on the recommendations. This was remarkable by the fact that most neighborhoods have high numbers of food and shop & service related venues.
+Regarding the content-based recommender, I found that the venue category distributions amongst the neighborhoods did not allow my inputs to change a lot and have a big impact on the recommendations. This was remarkable by the fact that most neighborhoods have high numbers of food and shop & service related venues and low number of arts and entertainment related venues.
 
-Given the limitations above, I found that the best recommendation possible was to recommend neighborhoods that were provided by both analysis.
+Given the limitations above, I found that the best solution was to recommend neighborhoods that were provided by both analysis.
 
 # Conclusion
 
